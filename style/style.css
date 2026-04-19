@@ -24,3 +24,25 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+/* Stile per il titolo */
+.title-header {
+    font-family: "Edu TAS Beginner", cursive;
+    padding: 30px 20px;
+}
+
+/* Stile per la data */
+.photo-date {
+    font-family: "Sometype Mono", cursive;
+    padding: 10px 0px;
+    margin-bottom: 0px;
+}
+
+/* Stile per il titolo della foto */
+.photo-title {
+    font-family: "Sometype Mono", cursive;
+    padding: 0px;
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: x-large;
+}
