@@ -25,7 +25,9 @@ function cardGenerator(post) {
             <div class="col-12 col-md-6 col-lg-4 card-column">
                 <div class="photo-card" data-image="${currentPost.url}" data-title="${currentPost.title}">
 
-                    <div class="red-pin"></div>
+                    <div class="red-pin">
+                        <img src="img/pin.svg" alt="red-pin">
+                    </div>
 
                     <div class="photo-container">
                         <img src="${currentPost.url}" alt="${currentPost.title}">
