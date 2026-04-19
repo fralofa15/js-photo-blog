@@ -13,6 +13,8 @@
 /* Stile per le card delle foto */
 .photo-card {
     position: relative;
+    background-color: white;
+    margin: 30px;
     padding: 15px 15px 20px 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
@@ -45,4 +47,35 @@
     margin-top: 0px;
     font-weight: bold;
     font-size: x-large;
+}
+
+/* contenitore header */
+.header-container {
+    position: relative;
+}
+
+/* immagine sfondo header */
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* contenitore main */
+.main-container {
+    position: relative;
+}
+
+/* sfondo main */
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
