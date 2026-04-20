@@ -12,9 +12,9 @@ function cardGenerator(post) {
 
     //Controllo se cardContainerElement è null
     if (cardContainerElement === null) {
-    console.log("Elemento non trovato");
-    return;
-}
+        console.log("Elemento non trovato");
+        return;
+    }
 
     // Ciclo for per generare le card
     for (let i = 0; i < post.length; i++) {
@@ -40,7 +40,63 @@ function cardGenerator(post) {
         `;
         cardContainerElement.innerHTML += cardHTML;
     }
+    //Recupero tutte le card appena create
+    const cards = document.querySelectorAll('.photo-card');
 
+    //Per ogni card aggiungo un evento click
+    cards.forEach(card => {
+
+        //Funzione per aggiungere l'evento click alla card
+        card.addEventListener('click', () => {
+
+            //Recupero i dati dell'immagine dalla card cliccata
+            const imageUrl = card.getAttribute('data-image');
+            const imageTitle = card.getAttribute('data-title');
+
+            //Controllo se i dati recuperati sono validi
+            if (imageUrl !== null && imageTitle !== null) {
+
+                //richiamo la funzione per l'overlay 
+                showOverlay(imageUrl, imageTitle);
+            }
+        });
+    });
+}
+
+/**
+ * @param {string} imageUrl
+ * @param {string} imageTitle
+ */
+
+function showOverlay(imageUrl, imageTitle) {
+    const overlay = document.querySelector('.image-overlay');
+
+    if (overlay === null) {
+        console.log("Elemento non trovato");
+        return;
+    }
+
+    // Inserisco contenuto nell'overlay
+    overlay.innerHTML = `
+        <div class="overlay-content">
+            <img class="overlay-image" src="${imageUrl}" alt="${imageTitle}">
+            <button class="close-button">Chiudi</button>
+        </div>
+    `;
+
+    // aggiungo la classe active per mostrare l'overlay
+    overlay.classList.add('active');
+
+    // Prendo il bottone appena creato
+    const closeBtn = overlay.querySelector('.close-button');
+
+    //SE il bottone esiste aggiungo l'evento per chiudere l'overlay
+    if (closeBtn !== null) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            overlay.innerHTML = '';
+        });
+    }
 }
 
 fetch(API_URL)
