@@ -15,7 +15,14 @@
     background-color: white;
     margin: 10px;
     padding: 15px 15px 20px 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.95);
+}
+
+/* Animazione per le card delle foto */
+.photo-card:hover {
+    transform: translateY(-15px) rotate(3deg) scale(1.05);
+    box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.35);
+    z-index: 2;
 }
 
 /* Stile per la puntina rossa */
@@ -48,12 +55,12 @@
     font-size: x-large;
 }
 
-/* contenitore header */
+/* Contenitore header */
 .header-container {
     position: relative;
 }
 
-/* immagine sfondo header */
+/* Immagine sfondo header */
 .header-bg {
     position: absolute;
     top: 0;
@@ -63,12 +70,12 @@
     z-index: -1;
 }
 
-/* contenitore main */
+/* Contenitore main */
 .main-container {
     position: relative;
 }
 
-/* sfondo main */
+/* Sfondo main */
 .card-bg {
     position: absolute;
     top: 0;
